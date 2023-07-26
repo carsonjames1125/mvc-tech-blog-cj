@@ -41,3 +41,21 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+// login for the user
+
+router.get('login', (req,res) => {
+    if (req.exSess.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('login');
+});
+
+// if no account is present the user must sign up
+
+router.get('/signup', async (req, res) => {
+    res.render('signup');
+})
+
+module.exports = router;
