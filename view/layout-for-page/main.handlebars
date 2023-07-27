@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carson's MVC Tech Blog</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+        <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="/css/style.css"/>
+    </head>
+
+
+    <body class="flex-column min-100-vh">
+        <nav class="navbar custom-navbar navbar-expand-lg">
+            <div class="container">
+                <div>
+                <a class="nav-item nav-link" href="/"><i class="bi bi-house"></i>HOME</a>
+                <a class="nav-item nav-link" href="/dashboard"><i class="bi bi-card-list"></i>DASHBOARD</a>
+                {{#if loggedIn}}
+                    <a class="nav-item nav-link" href="/login" id="logout"><i class"bi bi-box-arrow-right"></i>LOGOUT</a>
+                    {{else}}
+                    <a class="nav-item nav-link" href="/login"><i class="bi bi-box-arrow-in-right"></i>LOGIN</a>
+                    {{/if}}
+                </div>
+            </div>
+        </nav>
+
+        <header class="text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <h1 id="header">Carson's MVC TECH BLOG. WELCOME!!!!</h1>
+            </div>
+        </header>
+
+        <main class="col-auto">
+            {{{body}}}
+        </main>
+    </body>
+</html>
+
+<script src="/js/logout.js"></script>
