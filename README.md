@@ -15,9 +15,9 @@ To install this just clone the repo and run ```npm i```.
 
 ## Usage
 
-Github: 
+Github: https://github.com/carsonjames1125/mvc-tech-blog-cj
 
-Deployed Link:
+Heroku Deployed Link: https://mvc-tech-blog-cj-1e5d0e94a6a3.herokuapp.com/
 
 
 ![alt text](./photos/Screenshot%202023-07-27%20at%206.51.37 PM.png)
