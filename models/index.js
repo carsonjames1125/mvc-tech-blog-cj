@@ -1,5 +1,5 @@
 // import comments js
-const Comment = require('./comment')
+const comment = require('./comment')
 // import post file
 const Post = require('./Post');
 // import User file 
@@ -10,16 +10,16 @@ User.hasMany(Post, {
     onDelete: 'CASCADE'
 });
 
-User.hasMany(Comment, {
+User.hasMany(comment, {
     foreignKey: 'userId',
     onDelete: 'CASCADE'
 });
 
-Comment.belongsTo(Comment, {
+comment.belongsTo(comment, {
     foreignKey: 'userId',
 });
 
-Comment.belongsTo(Post, {
+comment.belongsTo(Post, {
     foreignKey: 'postId',
 });
 
@@ -28,9 +28,9 @@ Post.belongsTo(User, {
     onDelete: 'CASCADE'
 });
 
-Post.hasMany(Comment, {
+Post.hasMany(comment, {
     foreignKey: 'postId',
     onDelete: 'CASCADE'
 });
 
-module.exports = {User, Comment, Post}
+module.exports = {User, comment, Post}

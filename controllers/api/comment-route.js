@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { Comment } = require('../../models');
+const { comment } = require('../../models');
 
 const withAuth = require('../../utils/auth');
 
@@ -9,7 +9,7 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
     try{
-        const dbComData = await Comment.findAll({});
+        const dbComData = await comment.findAll({});
         if (dbComData.length === 0) {
             res.status(404).json({ message: "No Comment Available"});
             return;
@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        const comData = await Comment.findAll({
+        const comData = await comment.findAll({
             where: { id: req.params.id },
         });
         if (comData.length === 0) {
@@ -43,7 +43,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
     const body = req.body;
     try {
-        const newComm = await Comment.create({
+        const newComm = await comment.create({
             ...body,
             userId: req.exSess.userId,
         });
@@ -58,7 +58,7 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
     try {
-        const dbComData = await Comment.destroy({
+        const dbComData = await comment.destroy({
             where: {id: req.params.id},
         });
         if (!dbComData) {
